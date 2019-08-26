@@ -25,6 +25,8 @@ output_dir = Path(data_dir) / "output" / Path.cwd().name
 # used through submit.sh, needs to be divisor of number of grid cells
 njobarray = 64
 
+# max time in sec for sampler for a single grid cell.
+timeout = 20 * 60
 # tas, tasrange pr, prsn, prsnratio, ps, rlds, wind
 variable = "wind"  # select variable to detrend
 subset = 1  # only use every subset datapoint for bayes estimation for speedup
