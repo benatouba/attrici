@@ -212,7 +212,7 @@ def save_compressed_netcdf(ds, filename, chunks=None, encoding=None):
         encoding = {}
     if chunks is not None:
         ds = ds.chunk(chunks)
-    ds.to_netcdf(
+    ds.reset_coords(drop=True).to_netcdf(
         filename,
         encoding={varname: _get_full_encoding(varname) for varname in ds.data_vars},
     )
